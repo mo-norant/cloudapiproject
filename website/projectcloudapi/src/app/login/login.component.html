@@ -2,16 +2,16 @@
   Cloudstarter</h1>
 <h3 class="text-center">A cloudapi project</h3>
 
-<form>
+<form ngNoForm>
   <div class="row">
     <div class="input-field col s12">
-      <input [(ngModel)]="user.email" id="email" type="email" class="validate" [ngModelOptions]="{standalone: true}">
+      <input [(ngModel)]="user.email" id="email" type="email" class="validate">
       <label for="email">Email</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <input id="password" type="password"  class="validate" [ngModelOptions]="{standalone: true}">
+      <input id="password" type="password"  class="validate" >
       <label [(ngModel)]="user.password" for="password">Password</label>
     </div>
   </div>

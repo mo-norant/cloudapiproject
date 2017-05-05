@@ -11,8 +11,11 @@ isAuthenticated: boolean = false;
   constructor(private http: Http, private router: Router) { }
 
   login(usercreds){
-  var headers = new Headers();
+    
+        var headers = new Headers();
         var creds = 'name=' + usercreds.username + '&password=' + usercreds.password;
+
+        
         
         headers.append('Content-Type', 'application/X-www-form-urlencoded');
         return new Promise((resolve) => {
