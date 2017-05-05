@@ -1,0 +1,24 @@
+<h1 class="text-center">
+  Cloudstarter</h1>
+<h3 class="text-center">A cloudapi project</h3>
+
+<form>
+  <div class="row">
+    <div class="input-field col s12">
+      <input [(ngModel)]="user.email" id="email" type="email" class="validate" [ngModelOptions]="{standalone: true}">
+      <label for="email">Email</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="password" type="password"  class="validate" [ngModelOptions]="{standalone: true}">
+      <label [(ngModel)]="user.password" for="password">Password</label>
+    </div>
+  </div>
+
+  <button (click)="login(user)" type="button" class="button buttonBlue">Login
+  </button>
+</form>
+<footer>
+  <p>Mo Bouzim - <a href="https://github.com/mo-norant/cloudapiproject">Githubpage</a></p>
+</footer>
