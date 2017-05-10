@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthserviceService } from '../authservice.service'
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
+import {User} from'../user';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +11,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  user = {
-    email: '',
-    password: ''
-  };
+    model: any = {};
+    loading = false;
+    returnUrl: string;
 
-  constructor(private router: Router, private auth: AuthserviceService) { }
+  constructor(private router: Router, private _fb: FormBuilder ) { }
 
   ngOnInit() {
-  }
+    
+   }
 
-  login(usercreds) {
-
-    let userlogin = this.auth.login(usercreds);
-    userlogin.then((res) => {
-      if (res)
-        this.router.navigate(['/Dashboard']);
-    })
-
-  }
+    login() {
+        this.loading = true;
+        console.log(this.model.email + " " + this.model.password)
+   }
 
 }
