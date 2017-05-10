@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
+import { FacebookoauthService} from '../facebookoauth.service';
+
 import {User} from'../user';
 
 @Component({
@@ -15,15 +17,17 @@ export class LoginComponent implements OnInit {
     loading = false;
     returnUrl: string;
 
-  constructor(private router: Router, private _fb: FormBuilder ) { }
+  constructor(private router: Router, private _fb: FormBuilder , private authService : FacebookoauthService) { }
 
   ngOnInit() {
     
    }
 
-    login() {
-        this.loading = true;
-        console.log(this.model.email + " " + this.model.password)
+
+    
+
+   testrestapi(){
+   this.authService.login();
    }
 
 }

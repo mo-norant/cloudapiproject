@@ -2,11 +2,11 @@
   Cloudstarter</h1>
 <h3 class="text-center">A cloudapi project</h3>
 
-
+<!--
 <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
   <div class="row">
-    <div class="input-field col s12">
-
+    
+ <div class="input-field col s12">
       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
         <label for="email">Email</label>
         <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
@@ -24,7 +24,14 @@
       <button [disabled]="loading" class="btn btn-primary">Login</button>
     </div>
   </div>
-</form>
+</form> -->
+
+<div class="row">
+  <div class="input-field col s12">
+  <button  (click)="testrestapi()" class="btn btn-primary text-center">Facebook</button>
+  
+</div>
+
 
 
 <footer>
