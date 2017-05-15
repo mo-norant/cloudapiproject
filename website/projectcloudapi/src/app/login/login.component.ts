@@ -17,23 +17,14 @@ export class LoginComponent implements OnInit {
     loading = false;
     returnUrl: string;
 
-  constructor(private router: Router, private _fb: FormBuilder , private authService : FacebookoauthService) { }
+  constructor(private router: Router, private _fb: FormBuilder , private authService : FacebookoauthService) {
+    authService.login();
+   }
 
   ngOnInit() {
     
    }
 
 
-    testrestapi(){
-      this.authService.getTimeDate().subscribe{
-        data => console.log(data);
-      }
-    }
-
-
-/*
-   testrestapi(){
-   this.authService.login();
-   }
-*/
+   
 }

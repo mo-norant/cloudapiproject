@@ -40,9 +40,6 @@ export class FacebookoauthService {
 
 }
 
-getTimeDate(){
-  this.http.get('http://date.testjson.com').map(res => res.json())
-}
 
 
   
