@@ -24,10 +24,16 @@ export class LoginComponent implements OnInit {
    }
 
 
-    
+    testrestapi(){
+      this.authService.getTimeDate().subscribe{
+        data => console.log(data);
+      }
+    }
 
+
+/*
    testrestapi(){
    this.authService.login();
    }
-
+*/
 }
