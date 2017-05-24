@@ -34,7 +34,7 @@ export class ToolbarComponent implements OnInit {
 
 
   
-loginFacebook(){
+private loginFacebook(){
   
   this.authService.login().subscribe((succes)=> {
   this.name = succes.name;

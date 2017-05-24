@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import 'hammerjs'
 import { FacebookoauthService} from './facebookoauth.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { JasperoAlertsModule } from '@jaspero/ng2-alerts';
@@ -18,6 +17,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { CarditemComponent } from './carditem/carditem.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { OpendataAntwerpenService } from './opendata-antwerpen.service'
+
+import 'hammerjs'
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { OpendataAntwerpenService } from './opendata-antwerpen.service'
     ReactiveFormsModule,
     HttpModule,
     MaterialModule,
+    SimpleNotificationsModule.forRoot(),
     JasperoConfirmationsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),

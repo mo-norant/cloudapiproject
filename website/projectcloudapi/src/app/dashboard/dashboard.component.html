@@ -1,2 +1,29 @@
-<sebm-google-map [zoom]="zoom"  [latitude]="lat" [longitude]="lng">
+<sebm-google-map [zoom]="zoom" [latitude]="lat" [longitude]="lng">
+    <sebm-google-map-marker *ngFor="let item of opendata; let i = index" [latitude]="item.point_lat/1" [longitude]="item.point_lng/1"
+        [label]="">
+        <sebm-google-map-info-window [disableAutoPan]="true">
+            <md-list>
+                <md-list-item>
+                    <md-icon md-list-icon>wifi</md-icon>
+                    <h3 md-line> locatie </h3>
+                    <p md-line>
+                        <span> {{item.locatie}} </span>
+                    </p>
+                </md-list-item>
+                <md-list-item>
+                    <md-icon md-list-icon>home</md-icon>
+                    <h3 md-line> adres </h3>
+                    <p md-line>
+                        <span> {{item.straat}} </span>
+                        <span> {{item.huisnr}} </span>
+                    </p>
+                    <p md-line>
+                        <span> {{item.postcode}} {{item.gemeente}} </span>
+                    </p>
+                    
+                
+                </md-list-item>
+            </md-list>
+        </sebm-google-map-info-window>
+    </sebm-google-map-marker>
 </sebm-google-map>
