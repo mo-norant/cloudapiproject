@@ -1,15 +1,13 @@
+
 <md-toolbar>
 
   <span>Cloud Api Project</span>
-  <button md-button [mdMenuTriggerFor]="menu2">Menu</button>
-<md-menu #menu2="mdMenu">
-  <button (click)="loginFacebook()" md-menu-item> 
-    <md-icon>perm_identity</md-icon>
-      <span>Login Facebook</span></button>
-  <button md-menu-item>Item 2</button>
-</md-menu>
+
+
 
   <span class="spacer"></span>
+  
+  <span [hidden]="!showname" class="namelabel">Hi, {{name}}</span>
   <button md-icon-button [mdMenuTriggerFor]="menu">
 
 <md-icon>more_vert</md-icon>
@@ -41,31 +39,3 @@
 
 </md-toolbar>
 
-<md-card>
-  <md-card-title> {{name || async}}	</md-card-title>
-  <md-card-subtitle> {{name || async}} </md-card-subtitle>
-<md-card-content>	 <md-tab-group>
-  <md-tab label="One">
-    <h1>Some tab content</h1>
-    <p>...</p>
-  </md-tab>
-  <md-tab label="Two">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </md-tab>
-  <md-tab label="Two">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </md-tab>
-  <md-tab label="Two">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </md-tab>
-  <md-tab label="Two">
-    <h1>Some more tab content</h1>
-    <p>...</p>
-  </md-tab>
-</md-tab-group></md-card-content>
-<md-card-footer> fljhgqmlsjgh</md-card-footer>
-
-</md-card>

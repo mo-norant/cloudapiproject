@@ -22,7 +22,7 @@ export class FacebookoauthService {
   constructor(private http: Http, private router: Router, private route: ActivatedRoute) {
   }
 
-  login() {
+  public login() {
 
 
     this.url = this.apilink + this.client_id.toString() + `&redirect_uri=` + this.redirect_uri + this.token_uri;
@@ -40,7 +40,7 @@ export class FacebookoauthService {
 
 
   //parseparam
-  parseParams() {
+ private parseParams() {
     var params = {}, queryString = location.hash.substring(1), regex = /([^&=]+)=([^&]*)/g, m;
     while (m = regex.exec(queryString)) {
       params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
