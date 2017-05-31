@@ -8,9 +8,24 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class OpendataAntwerpenService {
 
+
+    weatherAPIKey : string = "2296d20b3986da9f5f41a49a4e520b52";
+
   constructor(private http: Http) {
     
    }
+
+
+public getWeather(){
+  return this.http.get("http://api.openweathermap.org/data/2.5/weather?APPID=2296d20b3986da9f5f41a49a4e520b52&q=antwerpen").map((res: Response) => res.json())
+  .catch((error: any) => Observable.throw(error.json() || alert("SERVER ERROR")));
+   
+}
+public getForecast(){
+  return this.http.get("http://api.openweathermap.org/data/2.5/forecast/daily?APPID=2296d20b3986da9f5f41a49a4e520b52&q=antwerpen&cnt=7").map((res: Response) => res.json())
+  .catch((error: any) => Observable.throw(error.json() || alert("SERVER ERROR")));
+   
+}
 
 
    public getHotspots(){

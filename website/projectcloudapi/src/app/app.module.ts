@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@angular/material'
+import { MaterialModule,MdCardModule, MdTabsModule } from '@angular/material'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FacebookoauthService} from './facebookoauth.service';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { JasperoAlertsModule } from '@jaspero/ng2-alerts';
@@ -19,6 +19,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { OpendataAntwerpenService } from './opendata-antwerpen.service'
 
 import 'hammerjs'
+
 
 @NgModule({
   declarations: [
@@ -35,9 +36,11 @@ import 'hammerjs'
     ReactiveFormsModule,
     HttpModule,
     MaterialModule,
+    MdTabsModule,
     SimpleNotificationsModule.forRoot(),
     JasperoConfirmationsModule,
     BrowserAnimationsModule,
+    MdCardModule,
     RouterModule.forRoot(routes),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAmUFnUtYX13RdtjhdB4OE4hgch5pWK2UA'

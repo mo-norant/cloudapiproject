@@ -20,10 +20,58 @@
                     <p md-line>
                         <span> {{item.postcode}} {{item.gemeente}} </span>
                     </p>
-                    
-                
+
+
                 </md-list-item>
             </md-list>
         </sebm-google-map-info-window>
     </sebm-google-map-marker>
 </sebm-google-map>
+
+
+
+<md-tab-group>
+    <md-tab>
+        <ng-template md-tab-label>
+           Today
+        </ng-template>
+
+
+        <md-card class="example-card">
+            <md-card-header>
+                <div md-card-avatar class="example-header-image"></div>
+                <md-card-title>{{weather?.name}}</md-card-title>
+                <md-card-title><strong>{{weather?.main.temp - 273.15 | number : '1.0-2' }} °C </strong> </md-card-title>
+                <md-card-subtitle>{{weather?.weather[0].main}}</md-card-subtitle>
+            </md-card-header>
+            <md-card-content>
+                <p>
+                    {{weather?.weather[0].description}}
+                </p>
+            </md-card-content>
+
+        </md-card>
+    </md-tab>
+
+ <md-tab *ngFor="let date of week; let i = index">
+        <ng-template md-tab-label>
+    {{date}}
+        </ng-template>
+
+
+        <md-card class="example-card">
+            <md-card-header>
+                <div md-card-avatar class="example-header-image"></div>
+                <md-card-title>{{weekdescription?.city.name}}</md-card-title>
+                <md-card-title><strong>{{weekdescription?.list[i+1].temp.day - 273.15 | number : '1.0-2' }} °C </strong> </md-card-title>
+                <md-card-subtitle>{{weekdescription?.list[i+1].weather[0].main}}</md-card-subtitle>
+            </md-card-header>
+            <md-card-content>
+                <p>
+                    {{weekdescription?.list[i+1].weather[0].description}}
+                </p>
+            </md-card-content>
+
+        </md-card>
+    </md-tab>
+</md-tab-group>
